@@ -1,0 +1,44 @@
+/********************/
+/* _Modules */
+/********************/
+/* line 11, /Users/chris/GIT/pseudo-retina-spritesheet/scss/_modules.scss */
+.red-square:before, .blue-square:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  overflow: hidden; }
+
+/* line 20, /Users/chris/GIT/pseudo-retina-spritesheet/scss/_modules.scss */
+.red-square, .blue-square {
+  width: auto; }
+
+/********************/
+/* Sprites */
+/********************/
+/* line 51, /Users/chris/GIT/pseudo-retina-spritesheet/scss/_spritesmith-build.scss */
+.red-square:before {
+  background-image: url("images/spritesheet.png");
+  background-position: -50px 0px;
+  width: 50px;
+  height: 50px; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    /* line 51, /Users/chris/GIT/pseudo-retina-spritesheet/scss/_spritesmith-build.scss */
+    .red-square:before {
+      background-size: 100px 50px;
+      background-image: url("images/spritesheet@2x.png"); } }
+
+/* line 51, /Users/chris/GIT/pseudo-retina-spritesheet/scss/_spritesmith-build.scss */
+.blue-square:before {
+  background-image: url("images/spritesheet.png");
+  background-position: 0px 0px;
+  width: 50px;
+  height: 50px; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    /* line 51, /Users/chris/GIT/pseudo-retina-spritesheet/scss/_spritesmith-build.scss */
+    .blue-square:before {
+      background-size: 100px 50px;
+      background-image: url("images/spritesheet@2x.png"); } }
+
+/*# sourceMappingURL=base.css.map */

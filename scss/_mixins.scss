@@ -1,0 +1,135 @@
+//********************/
+//* Global Variables */
+//********************/
+
+// This file contains all the functions and variables used in the project.
+// Most items should be well explained with some "copy and paste examples" hidden in the comments
+
+// Magwin Colours
+
+$bodyBg: #ffffff;  
+$bodyFont: #fff;  
+
+//$maincolour: lighten(#112211, 0);  
+//$supcolour1: lighten(#83A136, 0);
+//$supcolour1: darken(#ffffff, 20);
+//$supcolour2: lighten(#8E2F5C, 0);
+
+$maincolour: #323833;  
+$supcolour1: lighten(#8E2F5C, 10);
+$supcolour2: lighten(#2A7F40, 0);
+$supcolour3: #C5D5C6;
+$supcolour4: #FFFFFF;
+
+
+
+//Used where I havent set a colour yet
+$CHANGEME: pink;
+
+
+
+// Typography
+$headings: "Lato",Arial,sans-serif;
+$bodyType: "Raleway",Arial,sans-serif;
+$bodyFontSize: 14px;
+
+// Layout
+//$pageWrap: 90%;
+$maxWidth: 1200px;
+
+//********************/
+//* Global Mixins */
+//********************/
+
+//Headings
+@mixin headingDefaults {
+  text-rendering: optimizelegibility;
+  line-height: 1.5em;
+  font-weight: 300;
+  margin: 1em 0 0.5em 0;
+}
+
+@mixin h1 {
+  font-size: em(24px);
+  color: $lightGreen;
+  font-weight: 400;
+}
+@mixin h2 {
+  font-size: em(20px);
+  color: $lightGreen;
+  font-weight: 400;
+}
+@mixin h3 {
+  font-size: em(18px);
+  font-weight: 400;
+}
+@mixin h4 {
+  font-size: em(16px);
+  font-weight: 400;
+}
+@mixin h5 {
+  font-size: em(16px);
+}
+@mixin h6 {
+  font-size: em(14px);
+}
+
+// @media rules
+@mixin bp($size) {
+  @if ($MQs) {
+    @if $size == large {
+      @media (min-width: 1200px) { @content; }
+    }
+    @else if $size == medium {
+      @media (min-width: 850px) { @content; }
+    }
+    @else if $size == small {
+      @media (min-width: 480px)  { @content; }
+    }
+  }
+}
+
+// Convert px font sizes to em, keeps size fixed at correct size even if base font changes. Will always output given px vaule in ems. Usage font-size: em(20px)
+@function em($px, $base: $bodyFontSize) {
+  @return ($px / $base) * 1em;
+}
+
+//Control all link states in one. Usage: @include linkState($property: color, $value: red)
+@mixin linkState($property, $value) {
+  &:hover, &:focus {
+    #{$property}: $value;
+  }
+}
+
+//Control all active link states in one. Usage: @include linkActive($property: color, $value: blue)
+@mixin linkActive($property, $value) {
+  &:active {
+    #{$property}: $value;
+  }
+}
+
+// Sass column maker (IN PROGRESS)
+//@mixin colMaker($columns, $margin) {
+//  width: ((100% - (($columns - 1) * $margin)) / $columns);
+//  margin-right: $margin;
+//  margin-left: $margin;
+//}
+
+// Include a hiDPI version for retina devices. Create 2 files, example: logo.png at 32x32px, logo@2x.png at 64x64px. Usage: @include hidpi(css/images/logo, png, 200px, 100px);
+@mixin hidpi($file, $type, $width, $height) {
+  background-image: url($file + '.' + $type);
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (-moz-min-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx){
+    & {
+      background-image: url($file + '@2x.' + $type);
+      -webkit-background-size: $width $height;
+      -moz-background-size: $width $height;
+      -o-background-size: $width $height;
+      background-size: $width $height;
+    }
+  }
+}

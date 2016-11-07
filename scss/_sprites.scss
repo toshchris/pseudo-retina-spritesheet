@@ -1,0 +1,11 @@
+/********************/
+/* Sprites */
+/********************/
+
+.red-square {
+  @include sprite('red-square');
+}
+
+.blue-square {
+  @include sprite('blue-square');
+}

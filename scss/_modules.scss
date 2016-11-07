@@ -1,0 +1,30 @@
+/********************/
+/* _Modules */
+/********************/
+
+//Location of normal and retina spritesheets
+%normal-spritesheet {
+  background-image: url("images/spritesheet.png");
+}
+
+//So we can extend and keep our sass DRY
+%sprite-align {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+%sprite-width {
+  width: auto;
+}
+
+//Sprite re-use alignment
+%spriteAlignment {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
