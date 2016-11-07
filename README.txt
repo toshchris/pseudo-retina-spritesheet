@@ -35,7 +35,7 @@ Using the Terminal/Command line, change to the current project directory and run
 
 grunt sprite
 
-The Grunt task will run and add the new images to the spritesheets in /SiteElements/css/
+The Grunt task will run and add the new images to the spritesheets in /css/
 
 It will also update the Sass file "spritesmith-build.scss" with the image dimentions and position information (you should never touch this file but always make sure it is added to the main base.scss as a partial import)
 
